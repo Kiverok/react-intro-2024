@@ -1,16 +1,8 @@
 import Header from './components/Header'
 import { ways } from './data'
+import WayToTeach from './components/WayToTeach'
+import Button from './components/Button/Button'
 
-function WayToTeach({ title, description }) {
-  return (
-<li>
-            <p>
-              <strong>{title}</strong>
-              {description}
-            </p>
-          </li>
-  )
-}
 
 export default function App() {
   return (
@@ -28,6 +20,13 @@ export default function App() {
           <WayToTeach {... ways[2]} />
           <WayToTeach {... ways[3]} />
         </ul>
+        <section>
+          <h3>Чим відрізняємся від інших</h3>
+
+          <Button>Підхід</Button>
+          <Button>Доступність</Button>
+          <Button>Концентрація</Button>
+        </section>
       </section>
     </main>
     </div>

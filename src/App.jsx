@@ -6,10 +6,10 @@ import { useState } from 'react'
 
 
 export default function App() {
-const [ content, setContent ] = useState('Нажми на кнопку')
+const [ contentType, setContentType ] = useState(null)
 
   function handleClick(type) {
-setContent(type)
+setContentType(type)
   }
   return (
     <div>
@@ -32,7 +32,8 @@ setContent(type)
           <Button onClick={() => handleClick('way')}>Підхід</Button>
           <Button onClick={() => handleClick('easy')}>Доступність</Button>
           <Button onClick={() => handleClick('program')}>Концентрація</Button>
-        <p>{differences[content]}</p>
+        {!contentType && <p>Нажми на кнопку</p>}
+        {contentType && <p>{differences[contentType]}</p>}
         </section>
       </section>
     </main>

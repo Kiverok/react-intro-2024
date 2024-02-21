@@ -1,10 +1,16 @@
 import Header from './components/Header'
-import { ways } from './data'
+import { ways, differences } from './data'
 import WayToTeach from './components/WayToTeach'
 import Button from './components/Button/Button'
+import { useState } from 'react'
 
 
 export default function App() {
+const [ content, setContent ] = useState('Нажми на кнопку')
+
+  function handleClick(type) {
+setContent(type)
+  }
   return (
     <div>
     <Header />
@@ -23,9 +29,10 @@ export default function App() {
         <section>
           <h3>Чим відрізняємся від інших</h3>
 
-          <Button>Підхід</Button>
-          <Button>Доступність</Button>
-          <Button>Концентрація</Button>
+          <Button onClick={() => handleClick('way')}>Підхід</Button>
+          <Button onClick={() => handleClick('easy')}>Доступність</Button>
+          <Button onClick={() => handleClick('program')}>Концентрація</Button>
+        <p>{differences[content]}</p>
         </section>
       </section>
     </main>

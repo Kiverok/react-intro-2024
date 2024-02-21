@@ -1,8 +1,9 @@
 import './Button.css'
 
-export default function Button({ children }) {
-    function handleClick() {
-
-    }
-    return <button className='button' onAuxClick={handleClick}>{ children }</button>
+export default function Button({ children, onClick }) {
+   
+    return (
+    <button className='button active' onClick={onClick}>{ children }</button>
+    )
 }
+

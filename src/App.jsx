@@ -19,12 +19,13 @@ setContentType(type)
         <h3>Наш підхід до навчання</h3>
 
         <ul>
-          <WayToTeach 
+          {ways.map((way) => ( <WayToTeach {...way} />))}
+          {/* <WayToTeach 
           title={ways[0].title}
           description={ways[0].description} />
           <WayToTeach {... ways[1]} />
           <WayToTeach {... ways[2]} />
-          <WayToTeach {... ways[3]} />
+          <WayToTeach {... ways[3]} /> */}
         </ul>
         <section>
           <h3>Чим відрізняємся від інших</h3>

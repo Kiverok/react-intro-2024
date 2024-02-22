@@ -29,9 +29,9 @@ setContentType(type)
         <section>
           <h3>Чим відрізняємся від інших</h3>
 
-          <Button onClick={() => handleClick('way')}>Підхід</Button>
-          <Button onClick={() => handleClick('easy')}>Доступність</Button>
-          <Button onClick={() => handleClick('program')}>Концентрація</Button>
+          <Button isActive={contentType === 'way'} onClick={() => handleClick('way')}>Підхід</Button>
+          <Button isActive={contentType === 'easy'} onClick={() => handleClick('easy')}>Доступність</Button>
+          <Button isActive={contentType === 'program'}onClick={() => handleClick('program')}>Концентрація</Button>
         {!contentType && <p>Нажми на кнопку</p>}
         {contentType && <p>{differences[contentType]}</p>}
         </section>

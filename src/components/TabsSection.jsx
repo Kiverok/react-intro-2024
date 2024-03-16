@@ -1,11 +1,11 @@
 import Button from './Button/Button'
 
 
-export default function TabsSection() {
+export default function TabsSection({ active, onChange }) {
     return (
-        <section>
-            <Button>Головна</Button>
-            <Button>Зворотній зв’язок</Button>
+        <section style={{ marginBottom: "1rem" }}>
+            <Button isActive={active === 'main'} onClick={() => onChange('main')}>Головна</Button>
+            <Button isActive={active === 'feedback'} onClick={() => onChange('feedback')}>Зворотній зв’язок</Button>
         </section>
     )
 }
